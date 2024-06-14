@@ -17,7 +17,7 @@ with total_conversion_transformed as (
         case when sum(total_conversion) = 0 then 0 else (sum(spent) / sum(total_conversion)) * 100 end as cpa,
         case when sum(clicks) = 0 then 0 else (sum(total_conversion) / sum(clicks)) * 100 end as conversion_rate_clicks,
         case when sum(clicks) = 0 then 0 else (sum(APPROVED_CONVERSION) / sum(clicks)) * 100 end as approved_conversion_rate_clicks,
-        case when sum(total_conversion) = 0 then 0 else (sum(approved_conversion) / sum(total_conversion)) * 100 end as approved_conversion_rate,
+        case when sum(total_conversion) = 0 then 0 else (sum(approved_conversion) / sum(total_conversion)) * 100 end as approved_conversion_rate_orders,
         case when sum(approved_conversion) = 0 then 0 else (sum(spent) / sum(approved_conversion)) * 100 end as cost_per_approved_conversion
         
     from {{ ref('stg_conversion_data') }}

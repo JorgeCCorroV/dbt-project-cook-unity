@@ -25,69 +25,83 @@ models:
         description: "Total interest"
         tests:
           - not_null
-          - expression_is_positive
+          - dbt_utils.expression_is_true:
+              expression: "total_interest > 0"
       - name: total_impressions
         description: "Total impressions"
         tests:
           - not_null
-          - expression_is_positive
+          - dbt_utils.expression_is_true:
+              expression: "total_impressions > 0"
       - name: total_clicks
         description: "Total clicks"
         tests:
           - not_null
-          - expression_is_positive
+          - dbt_utils.expression_is_true:
+              expression: "total_clicks > 0"
       - name: total_spent
         description: "Total spent"
         tests:
           - not_null
-          - expression_is_positive
+          - dbt_utils.expression_is_true:
+              expression: "total_spent > 0"
       - name: total_conversions
         description: "Total conversions"
         tests:
           - not_null
-          - expression_is_positive
+          - dbt_utils.expression_is_true:
+              expression: "total_conversions > 0"
       - name: total_approved_conversions
         description: "Approved conversions"
         tests:
           - not_null
-          - expression_is_positive
+          - dbt_utils.expression_is_true:
+              expression: "total_approved_conversions > 0"
       - name: ctr
         description: "Click-through rate"
         tests:
           - not_null
-          - expression_is_positive
+          - dbt_utils.expression_is_true:
+              expression: "ctr > 0"
       - name: cpc
         description: "Cost per click"
         tests:
           - not_null
-          - expression_is_positive
+          - dbt_utils.expression_is_true:
+              expression: "cpc > 0"
       - name: cpm
         description: "Cost per thousand impressions"
         tests:
           - not_null
-          - expression_is_positive
+          - dbt_utils.expression_is_true:
+              expression: "cpm > 0"
       - name: cpa
         description: "Cost per acquisition"
         tests:
           - not_null
-          - expression_is_positive
+          - dbt_utils.expression_is_true:
+              expression: "cpa > 0"
       - name: conversion_rate_clicks
         description: "Conversion rate: orders by clicks"
         tests:
           - not_null
-          - expression_is_positive
+          - dbt_utils.expression_is_true:
+              expression: "conversion_rate_clicks > 0"
       - name: approved_conversion_rate_clicks
         description: "Approved conversion rate by clicks"
         tests:
           - not_null
-          - expression_is_positive
+          - dbt_utils.expression_is_true:
+              expression: "approved_conversion_rate_clicks > 0"
       - name: approved_conversion_rate_orders
         description: "Conversion rate: orders by approved orders"
         tests:
           - not_null
-          - expression_is_positive
+          - dbt_utils.expression_is_true:
+              expression: "approved_conversion_rate_orders > 0"
       - name: cost_per_approved_conversion
         description: "Cost per approved conversion"
         tests:
           - not_null
-          - expression_is_positive
+          - dbt_utils.expression_is_true:
+              expression: "cost_per_approved_conversion > 0"

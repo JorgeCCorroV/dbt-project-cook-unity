@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: conversion_data_transformed
+  - name: mrt_conversion_data
     description: "Transformed data for conversion metrics analysis"
     columns:
       - name: ad_id
@@ -21,32 +21,32 @@ models:
         description: "Gender"
         tests:
           - not_null
-      - name: interest
+      - name: total_interest
         description: "Total interest"
         tests:
           - not_null
           - expression_is_positive
-      - name: impressions
+      - name: total_impressions
         description: "Total impressions"
         tests:
           - not_null
           - expression_is_positive
-      - name: clicks
+      - name: total_clicks
         description: "Total clicks"
         tests:
           - not_null
           - expression_is_positive
-      - name: spent
+      - name: total_spent
         description: "Total spent"
         tests:
           - not_null
           - expression_is_positive
-      - name: total_conversion
+      - name: total_conversions
         description: "Total conversions"
         tests:
           - not_null
           - expression_is_positive
-      - name: approved_conversion
+      - name: total_approved_conversion
         description: "Approved conversions"
         tests:
           - not_null

@@ -25,83 +25,69 @@ models:
         description: "Total interest"
         tests:
           - not_null
-          - test_expression:
-              expression: interest >= 0
+          - expression_is_positive
       - name: impressions
         description: "Total impressions"
         tests:
           - not_null
-          - test_expression:
-              expression: impressions >= 0
+          - expression_is_positive
       - name: clicks
         description: "Total clicks"
         tests:
           - not_null
-          - test_expression:
-              expression: clicks >= 0
+          - expression_is_positive
       - name: spent
         description: "Total spent"
         tests:
           - not_null
-          - test_expression:
-              expression: spent >= 0
+          - expression_is_positive
       - name: total_conversion
         description: "Total conversions"
         tests:
           - not_null
-          - test_expression:
-              expression: total_conversion >= 0
+          - expression_is_positive
       - name: approved_conversion
         description: "Approved conversions"
         tests:
           - not_null
-          - test_expression:
-              expression: approved_conversion >= 0
+          - expression_is_positive
       - name: ctr
         description: "Click-through rate"
         tests:
           - not_null
-          - test_expression:
-              expression: ctr >= 0
+          - expression_is_positive
       - name: cpc
         description: "Cost per click"
         tests:
           - not_null
-          - test_expression:
-              expression: cpc >= 0
+          - expression_is_positive
       - name: cpm
         description: "Cost per thousand impressions"
         tests:
           - not_null
-          - test_expression:
-              expression: cpm >= 0
+          - expression_is_positive
       - name: cpa
         description: "Cost per acquisition"
         tests:
           - not_null
-          - test_expression:
-              expression: cpa >= 0
+          - expression_is_positive
       - name: conversion_rate_clicks
         description: "Conversion rate: orders by clicks"
         tests:
           - not_null
-          - test_expression:
-              expression: conversion_rate_clicks >= 0
+          - expression_is_positive
       - name: approved_conversion_rate_clicks
         description: "Approved conversion rate by clicks"
         tests:
           - not_null
-          - test_expression:
-              expression: approved_conversion_rate_clicks >= 0
+          - expression_is_positive
       - name: approved_conversion_rate_orders
         description: "Conversion rate: orders by approved orders"
         tests:
           - not_null
-          - test_expression:
-              expression: approved_conversion_rate_orders >= 0
+          - expression_is_positive
       - name: cost_per_approved_conversion
         description: "Cost per approved conversion"
         tests:
           - not_null
-          - test_expression:
-              expression: cost_per_approved_conversion >= 0
+          - expression_is_positive

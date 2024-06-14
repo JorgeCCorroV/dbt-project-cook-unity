@@ -13,8 +13,6 @@ with stg as (
         total_conversion as conversions,
         approved_conversion as approved_conversions
 
-
-        
     from {{ ref('cook_unity_conversion_data') }}
 
 )

@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: mrt_conversion_data
+  - name: mrt_cookunicity_conversions
     description: "Transformed data for conversion metrics analysis"
     columns:
       - name: ad_id
@@ -46,7 +46,7 @@ models:
         tests:
           - not_null
           - expression_is_positive
-      - name: total_approved_conversion
+      - name: total_approved_conversions
         description: "Approved conversions"
         tests:
           - not_null

@@ -1,6 +1,5 @@
 {% set columns_to_sum =
     [
-        'interest', 
         'impressions',
         'clicks',
         'spent',
@@ -27,7 +26,8 @@ with conversion_metrics as (
         ad_id,
         xyz_campaign_id,
         age,
-        gender
+        gender,
+        interest
 
         {%- for columns in columns_to_sum %}
         
@@ -46,7 +46,7 @@ with conversion_metrics as (
 
         
     from {{ ref('stg_cookunicity_conversions') }}
-    {{ dbt_utils.group_by(n=4) }}
+    {{ dbt_utils.group_by(n=5) }}
 
 )
 

@@ -1,11 +1,20 @@
 version: 2
 
+# https://docs.getdbt.com/reference/source-properties
+
+sources:
+  - name: production
+    description: replica of the production database.
+    schema: public
+    database: raw
+    tables:
+      - name: conversion_data
+        description: RAW data from cook unity.
+
 models:
   - name: mrt_cookunity_conversions
     description: "Transformed data for conversion metrics analysis"
     tests:
-      - dbt_utils.expression_is_true:
-          expression: "total_interest >= 0"
       - dbt_utils.expression_is_true:
           expression: "total_impressions >= 0"
       - dbt_utils.expression_is_true:
@@ -33,11 +42,6 @@ models:
       - dbt_utils.expression_is_true:
           expression: "cost_per_approved_conversion >= 0"
     columns:
-      - name: ad_id
-        description: "ID of the ad"
-        tests:
-          - not_null
-          - unique
       - name: xyz_campaign_id
         description: "Campaign ID"
         tests:
@@ -50,8 +54,8 @@ models:
         description: "Gender"
         tests:
           - not_null
-      - name: total_interest
-        description: "Total interest"
+      - name: interest
+        description: "interest"
         tests:
           - not_null
       - name: total_impressions

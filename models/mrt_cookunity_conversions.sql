@@ -44,7 +44,7 @@ with conversion_metrics as (
         {% endfor %}
 
         
-    from {{ ref('stg_cookunicity_conversions') }}
+    from {{ ref('stg_cookunity_conversions') }}
     {{ dbt_utils.group_by(n=4) }}
 
 )

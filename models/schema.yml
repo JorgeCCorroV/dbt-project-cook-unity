@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: mkt_cookunity_conversions
+  - name: mrt_cookunity_conversions
     description: "Transformed data for conversion metrics analysis"
     tests:
       - dbt_utils.expression_is_true:
